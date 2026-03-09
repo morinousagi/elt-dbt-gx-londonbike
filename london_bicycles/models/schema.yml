@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: fact_hire
+    description: "Fact table for hire."
+    columns:
+      - name: rental_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: start_station_id
+        description: "The foreign key to the station dimension table"
+        tests:
+          - relationships:
+              # Uncomment the line 'arguments:' to resolve
+              # MissingArgumentsPropertyInGenericTestDeprecation Warnings
+              # Warnings appear dbt-core >= 1.10 environment
+              # 'arguments:' will not work in older versions of dbt < 1.10
+              arguments:
+                to: ref('dim_station')
+                field: id
+      - name: start_date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              arguments:
+                column_type: date
+      - name: end_date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              arguments:
+                column_type: date
+      - name: duration
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: false
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              arguments:
+                column_type: integer

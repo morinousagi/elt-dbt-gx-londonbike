@@ -1,0 +1,13 @@
+london_bicycles:
+  outputs:
+    dev:
+      dataset: london_bicycles
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: EU
+      method: oauth
+      priority: interactive
+      project: dsai-001
+      threads: 1
+      type: bigquery
+  target: dev
