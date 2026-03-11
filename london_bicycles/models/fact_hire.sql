@@ -6,7 +6,7 @@
 -- Common Table Expression (CTE) to pull from the raw_hires table 
 WITH raw_data AS (
     SELECT * FROM {{ source('london_bicycles', 'cycle_hire') }} 
-    WHERE start_date >= TIMESTAMP('2021-01-01 00:00:00 UTC')
+    --WHERE start_date >= TIMESTAMP('2021-01-01 00:00:00 UTC')
     ),
 
 -- CTE to perform data cleaning and generate derived columns 
