@@ -13,7 +13,7 @@
 ### 3. ELT Pipeline
 - dbt model *./models/fact_hire.sql*  
   - Data filtering: *start_date>=yyyy, duration>0, start_station_id IS NOT NULL*
-  - Derived columns: *duration_minutes, time_of_day_category, season*
+  - Derived columns: *duration_minutes, part_of_day, part_of_week, season*
 - dbt model *./models/star/dim_hire.sql* 
   - Data filtering: *start_date>=yyyy*
   - Derived columns: *start_total, end_total*
