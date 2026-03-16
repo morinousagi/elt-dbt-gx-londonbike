@@ -1,5 +1,4 @@
 ## ELT and Data Analysis - london_bicycles
-**Team members:** Alan, Daniel, Demi, Heng, Jasmine, Shern  
 
 ### 1. Data Ingestion
 - Source data: [london_bicycles dataset](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sbigquery-public-data!2slondon_bicycles)  
@@ -12,7 +11,7 @@
 
 ### 3. ELT Pipeline
 - dbt model *./models/fact_hire.sql*  
-  - Data filtering: *start_date>=yyyy, duration>0, start_station_id IS NOT NULL*
+  - Data cleaning & filtering: *start_date>=yyyy, duration>0, start_station_id IS NOT NULL*
   - Derived columns: *duration_minutes, part_of_day, part_of_week, season*
 - dbt model *./models/star/dim_hire.sql* 
   - Data filtering: *start_date>=yyyy*
@@ -35,5 +34,5 @@
 
 ### Ref:
 - Gemini
-- https://hub.getdbt.com/dbt-labs/dbt_utils/latest/, 
+- https://hub.getdbt.com/dbt-labs/dbt_utils/latest/
 - https://hub.getdbt.com/calogica/dbt_expectations/latest/
