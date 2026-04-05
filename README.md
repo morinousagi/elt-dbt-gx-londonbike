@@ -26,6 +26,7 @@
 ### 5. Data Analysis with Python
 - Aggregate data using SQL query in BigQuery
 - Connect to data warehouse using SQLAlchemy to fetch desired tables
+- Validate data using Great Expectations
 - Perform EDA using Pandas and Seaborn
 
 ### 6. Data Pipeline
